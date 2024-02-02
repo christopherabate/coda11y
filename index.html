@@ -8,48 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/prismjs-tomorrow-theme@0.0.1/prism-tomorrow.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="assets/css/sandbox.css" rel="stylesheet">
     <title>Coda11y - Éditeur de code</title>
-    <style>
-      .browser {
-        
-      }
-      
-      .sandbox-editor {
-        font-family: monospace;
-        line-height: 1.5;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        gap: 0;
-      }
-
-      .sandbox-editor pre,
-      .sandbox-editor textarea {
-        grid-area: 1 / 1 / 2 / 2;
-        font-size: 1rem;
-        font-family: inherit;
-        line-height: inherit;
-        overflow: visible;
-        white-space: pre-wrap;
-        word-break: break-all;
-        margin: 0;
-      }
-
-      .sandbox-editor textarea {
-        background-color: transparent;
-        color: transparent;
-        caret-color: white;
-        padding: 1em;
-        border: none;
-        display: block;
-        resize: none;
-        appearance: none;
-        overflow: hidden;
-      }
-
-      .sandbox-editor code {
-        word-wrap: break-word;
-      }
-    </style>
   </head>
   <body class="container">
     <header role="banner">
@@ -58,44 +16,85 @@
     <main role="main">
       <div class="sandbox row" data-sandbox-editable="true">
         <div class="col">
-          <div class="browser card mb-3">
-            <div class="card-header">
+          <div class="card text-bg-dark mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <i class="bi bi-filetype-html"></i>
               HTML
+              <div class="dropdown">
+                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-gear-fill"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#">Something else here</a>
+                </div>
+              </div>
             </div>
             <div class="card-body p-0">
-              <pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;</code></pre>
+              <pre><code class="language-html">&lt;h1&gt;Hello&lt;/h1&gt;</code></pre>
             </div>
           </div>
-          <div class="browser card mb-3">
-            <div class="card-header">
+          <div class="card text-bg-dark mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <i class="bi bi-filetype-css"></i>
               CSS
+              <div class="dropdown">
+                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-gear-fill"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#">Something else here</a>
+                </div>
+              </div>
             </div>
             <div class="card-body p-0">
-              <pre><code class="language-css">iframe {
-  width: 100%;
-  border: 2px solid #000000;
+              <pre><code class="language-css">h1 {
+  color: red;
 }</code></pre>
             </div>
           </div>
-          <div class="browser card">
-            <div class="card-header">
+          <div class="card text-bg-dark">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <i class="bi bi-filetype-js"></i>
               Javascript
+              <div class="dropdown">
+                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-gear-fill"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#">Something else here</a>
+                </div>
+              </div>
             </div>
             <div class="card-body p-0">
-              <pre><code class="language-js">// first, find all the div.code blocks
-  document.querySelectorAll('div.code').forEach(el => {
-  hljs.highlightElement(el);
+              <pre><code class="language-js">// Alert
+document.querySelectorAll('h1').forEach(function (title) {
+  title.addEventListener("click", function (e) {
+    alert(e.target);
+  })
 });</code></pre>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="browser card h-100">
-            <div class="card-header">
+          <div class="card text-bg-light h-100">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <div>
+                <i class="bi bi-circle-fill text-danger"></i>
+                <i class="bi bi-circle-fill text-warning"></i>
+                <i class="bi bi-circle-fill text-success"></i>
+              </div>
               Output
+              <div class="dropdown">
+                <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-gear-fill"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#">Something else here</a>
+                </div>
+              </div>
             </div>
             <div class="card-body p-0">
-              <iframe class="h-100"></iframe>
+              <iframe class="h-100 w-100 bg-white"></iframe>
             </div>
           </div>
         </div>

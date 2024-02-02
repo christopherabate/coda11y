@@ -32,7 +32,7 @@ function updateResult (box) {
 let sandboxes = document.querySelectorAll('.sandbox');
 
 // Parse sandboxes
-sandboxes.forEach(function (sandbox) {
+sandboxes.forEach((sandbox) => {
 
   updateResult(sandbox);
   
@@ -43,7 +43,7 @@ sandboxes.forEach(function (sandbox) {
     let codeboxes = sandbox.querySelectorAll('pre code');
   
     // Parse codeboxes
-    codeboxes.forEach(function (codebox) {
+    codeboxes.forEach((codebox) => {
     
       // Create the editor div
       let editor = document.createElement("div");
