@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs-tomorrow-theme@0.0.1/prism-tomorrow.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="assets/css/sandbox.css" rel="stylesheet">
+    <title>Coda11y - Éditeur de code</title>
+    <style>
+      .browser {
+        
+      }
+      
+      .sandbox-editor {
+        font-family: monospace;
+        line-height: 1.5;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 0;
+      }
+
+      .sandbox-editor pre,
+      .sandbox-editor textarea {
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 1rem;
+        font-family: inherit;
+        line-height: inherit;
+        overflow: visible;
+        white-space: pre-wrap;
+        word-break: break-all;
+        margin: 0;
+      }
+
+      .sandbox-editor textarea {
+        background-color: transparent;
+        color: transparent;
+        caret-color: white;
+        padding: 1em;
+        border: none;
+        display: block;
+        resize: none;
+        appearance: none;
+        overflow: hidden;
+      }
+
+      .sandbox-editor code {
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <header role="banner">
+      <h1>Sandbox</h1>
+    </header>
+    <main role="main">
+      <div class="sandbox row" data-sandbox-editable="true">
+        <div class="col">
+          <div class="browser card mb-3">
+            <div class="card-header">
+              HTML
+            </div>
+            <div class="card-body p-0">
+              <pre><code class="language-html">&lt;h1&gt;Heading 1&lt;/h1&gt;</code></pre>
+            </div>
+          </div>
+          <div class="browser card mb-3">
+            <div class="card-header">
+              CSS
+            </div>
+            <div class="card-body p-0">
+              <pre><code class="language-css">iframe {
+  width: 100%;
+  border: 2px solid #000000;
+}</code></pre>
+            </div>
+          </div>
+          <div class="browser card">
+            <div class="card-header">
+              Javascript
+            </div>
+            <div class="card-body p-0">
+              <pre><code class="language-js">// first, find all the div.code blocks
+  document.querySelectorAll('div.code').forEach(el => {
+  hljs.highlightElement(el);
+});</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="browser card h-100">
+            <div class="card-header">
+              Output
+            </div>
+            <div class="card-body p-0">
+              <iframe class="h-100"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="assets/js/sandbox.js"></script>
+</html>

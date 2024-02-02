@@ -1,0 +1,36 @@
+.sandbox-editor {
+  font-family: monospace;
+  line-height: 1.5;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+
+.sandbox-editor pre,
+.sandbox-editor textarea {
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: inherit;
+  overflow: visible;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}
+
+.sandbox-editor textarea {
+  background-color: transparent;
+  color: transparent;
+  caret-color: white;
+  padding: 1em;
+  border: none;
+  display: block;
+  resize: none;
+  appearance: none;
+  overflow: hidden;
+}
+
+.sandbox-editor code {
+  word-wrap: break-word;
+}
