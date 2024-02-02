@@ -56,6 +56,8 @@ sandboxes.forEach((sandbox) => {
       textarea.setAttribute("autocorrect", "off");
       textarea.setAttribute("autocapitalize", "off");
       textarea.setAttribute("translate", "no");
+      textarea.setAttribute("title", codebox.getAttribute("title"));
+      textarea.setAttribute("aria-label", codebox.getAttribute("title"));
       textarea.innerHTML = codebox.textContent;
       
       // Move textarea and code into editor
