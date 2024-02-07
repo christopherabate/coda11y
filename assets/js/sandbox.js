@@ -54,6 +54,7 @@ sandboxes.forEach((sandbox) => {
       textarea.setAttribute("rows", "1");
       textarea.setAttribute("spellcheck", "false");
       textarea.setAttribute("autocorrect", "off");
+      textarea.setAttribute("autocomplete", "off");
       textarea.setAttribute("autocapitalize", "off");
       textarea.setAttribute("translate", "no");
       textarea.setAttribute("title", codebox.getAttribute("title"));
@@ -71,7 +72,13 @@ sandboxes.forEach((sandbox) => {
       // On change
       textarea.addEventListener("input", (e) => {
         codebox.textContent = e.target.value;
-        Prism.highlightAll();
+        
+        try {
+          Prism.highlightAll();
+        } catch (error) {
+          console.log(error);
+        }
+        
         clearTimeout(timeoutID);
         timeoutID = setTimeout(() => {
           updateResult(sandbox);

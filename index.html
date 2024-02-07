@@ -18,17 +18,8 @@
         <div class="col">
           <div class="card text-bg-dark mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
-              <span class="bi bi-filetype-html"></span>
               <p class="fw-bold m-0">HTML</p>
-              <div class="dropdown">
-                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Options</span>
-                  <span class="bi bi-gear-fill"></span>
-                </button>
-                <div class="dropdown-menu">
-                  <a href="#">Something else here</a>
-                </div>
-              </div>
+              <span class="bi bi-filetype-html"></span>
             </div>
             <div class="card-body p-0">
               <pre><code title="HTML" class="language-html">&lt;h1&gt;Hello&lt;/h1&gt;</code></pre>
@@ -36,17 +27,8 @@
           </div>
           <div class="card text-bg-dark mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
-              <span class="bi bi-filetype-css"></span>
               <p class="fw-bold m-0">CSS</p>
-              <div class="dropdown">
-                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Options</span>
-                  <span class="bi bi-gear-fill"></span>
-                </button>
-                <div class="dropdown-menu">
-                  <a href="#">Something else here</a>
-                </div>
-              </div>
+              <span class="bi bi-filetype-css"></span>
             </div>
             <div class="card-body p-0">
               <pre><code title="CSS" class="language-css">h1 {
@@ -56,17 +38,8 @@
           </div>
           <div class="card text-bg-dark">
             <div class="card-header d-flex justify-content-between align-items-center">
-              <span class="bi bi-filetype-js"></span>
               <p class="fw-bold m-0">Javascript</p>
-              <div class="dropdown">
-                <button class="btn btn-dark btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="visually-hidden">Options</span>
-                  <span class="bi bi-gear-fill"></span>
-                </button>
-                <div class="dropdown-menu">
-                  <a href="#">Something else here</a>
-                </div>
-              </div>
+              <span class="bi bi-filetype-js"></span>
             </div>
             <div class="card-body p-0">
               <pre><code title="Javascript" class="language-js">// Alert
@@ -92,13 +65,24 @@ document.querySelectorAll('h1').forEach(function (title) {
                   <span class="visually-hidden">Options</span>
                   <span class="bi bi-gear-fill"></span>
                 </button>
-                <div class="dropdown-menu">
-                  <a href="#">Something else here</a>
-                </div>
+                <form class="dropdown-menu p-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sandbox-framework" id="sandbox-framework-bootstrap" value="bootstrap">
+                    <label class="form-check-label" for="sandbox-bootstrap">Import Twitter Bootstrap</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sandbox-framework" id="sandbox-framework-boosted" value="boosted">
+                    <label class="form-check-label" for="sandbox-boosted">Import Orange Boosted</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sandbox-framework" id="sandbox-framework-none" value="">
+                    <label class="form-check-label" for="sandbox-bootstrap">None</label>
+                  </div>
+                </form>
               </div>
             </div>
             <div class="card-body p-0">
-              <iframe class="h-100 w-100 bg-white"></iframe>
+              <iframe title="Sandbox result" class="h-100 w-100 bg-white"></iframe>
             </div>
           </div>
         </div>
