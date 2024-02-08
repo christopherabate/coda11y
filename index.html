@@ -14,7 +14,7 @@
       <h1>Sandbox</h1>
     </header>
     <main role="main">
-      <div class="sandbox row" data-sandbox-editable="true">
+      <div id="SandboxExemple1" class="row">
         <div class="col">
           <div class="card text-bg-dark mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -82,7 +82,19 @@ document.querySelectorAll('h1').forEach(function (title) {
               </div>
             </div>
             <div class="card-body p-0">
-              <iframe title="Sandbox result" class="h-100 w-100 bg-white"></iframe>
+              <iframe title="Sandbox result" class="h-100 w-100 bg-white">
+                <!doctype html>
+                <html>
+                  <head>
+                    <meta charset="utf-8">
+                    <style>${css}</style>
+                  </head>
+                  <body>
+                    ${html}
+                    <script type="module">${js}</script>
+                  </body>
+                </html>
+              </iframe>
             </div>
           </div>
         </div>

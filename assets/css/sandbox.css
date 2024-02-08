@@ -8,7 +8,8 @@
 .sandbox-editor pre,
 .sandbox-editor textarea {
   font-family: monospace;
-  font-size: 1em;
+  font-size: .875rem;
+  line-height: 1.5rem;
   grid-area: 1 / 1 / 2 / 2;
   margin: 0;
   padding: 1em;
