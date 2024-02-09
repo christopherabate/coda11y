@@ -1,24 +1,25 @@
 class Sandbox {
+  
   constructor(options = {}) {
-    this.selector = options.selector || "#SandboxExemple1";
-    this.editable = options.editable || true;
     
-    this.template = document.querySelector(`${this.selector} iframe`).textContent;
+    this.selector = options.selector || ".sandbox";
+    this.editable = options.editable || false;
     
-    this.updateOutput();
+    this.sandbox = document.querySelector(this.selector);
+    this.output = this.sandbox.querySelector("iframe");
+    this.template = this.output.textContent;
     
-    if (this.editable === true) {
-      // Collect codeboxes
-      let codeboxes = document.querySelectorAll(`${this.selector} pre code`);
+    this.update();
     
-      // Parse codeboxes
+    if (this.editable !== false) {
+      
+      let codeboxes = this.sandbox.querySelectorAll("pre code");
+    
       codeboxes.forEach((codebox) => {
       
-        // Create the editor div
         let editor = document.createElement("div");
         editor.classList.add("sandbox-editor");
         
-        // Create a textarea for edition
         let textarea = document.createElement("textarea");
         textarea.setAttribute("rows", "1");
         textarea.setAttribute("spellcheck", "false");
@@ -30,53 +31,49 @@ class Sandbox {
         textarea.setAttribute("aria-label", codebox.getAttribute("title"));
         textarea.innerHTML = codebox.textContent;
         
-        // Move textarea and code into editor
         codebox.parentElement.insertAdjacentElement("beforebegin", editor);
         editor.appendChild(codebox.parentElement);
         editor.appendChild(textarea);
         
-        // Timeout
         let timeoutID;
         
-        // On change
         textarea.addEventListener("input", (e) => {
+          
           codebox.textContent = e.target.value;
           
-          try {
-            Prism.highlightAll();
-          } catch (error) {
-            console.log(error);
+          if (typeof this.editable === "function") {
+            try {
+              this.editable();
+            } catch (error) {
+              console.log(error);
+            }
           }
           
           clearTimeout(timeoutID);
           timeoutID = setTimeout(() => {
-            this.updateOutput();;
+            this.update()
           }, 400);
         })
       });
     }
   }
   
-  updateOutput() {
-    let input = {
-      html: document.querySelector(`${this.selector} .language-html`).textContent,
-      css: document.querySelector(`${this.selector} .language-css`).textContent,
-      js: document.querySelector(`${this.selector} .language-js`).textContent,
-    };
+  update() {
     
-    let output = document.querySelector(`${this.selector} iframe`);
+    let input = [...this.template.matchAll(/\$\{([\w-]+)\}/g)].reduce((tag, language) => {
+      return {...tag, [language[1]]: this.sandbox.querySelector(`code[class*="${language[1]}"]`).textContent};
+    }, {});
+    
     let languages = Object.keys(input);
     let code = Object.values(input);
     
     let render = new Function(...languages, `return \`${this.template}\`;`)(...code);
-		let clone = output.cloneNode();
-		output.replaceWith(clone);
-		output = clone;
+		let clone = this.output.cloneNode();
+		this.output.replaceWith(clone);
+		this.output = clone;
     
-    output.contentWindow.document.open();
-    output.contentWindow.document.writeln(render);
-    output.contentWindow.document.close();
+    this.output.contentWindow.document.open();
+    this.output.contentWindow.document.writeln(render);
+    this.output.contentWindow.document.close();
   }
 }
-
-new Sandbox ();
