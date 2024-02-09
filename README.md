@@ -1,2 +1,2 @@
 # coda11y
-An accessible sandbox
+An interactive accessibility test
