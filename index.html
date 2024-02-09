@@ -105,9 +105,19 @@ document.querySelectorAll('h1').forEach(function (title) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
   <script src="assets/js/sandbox.js"></script>
-  <script>
+  <script type="module">
     new Sandbox({selector: "#SandboxExemple1", editable: () => {
       Prism.highlightAll();
     }});
+    
+    fetch('./exercises.json')
+    .then(response => response.json())
+    .then(data => {
+      // `data` variable contains the JSON data from the file
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   </script>
 </html>
