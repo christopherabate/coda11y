@@ -1,0 +1,65 @@
+{
+  "exercises": [
+    {
+      "title": "Exo 1",
+      "description": "Desc",
+      "clues": [
+        "Incice 1",
+        "Incice 2",
+        "Incice 3"
+      ],
+      "code": [
+        {
+          "language": "html",
+          "example": "ex1",
+          "soluce": "sol11",
+          "tests": [
+            {
+              "pattern": "pat1",
+              "message": "msg"
+            },
+            {
+              "pattern": "pat1",
+              "message": "msg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Exo 2",
+      "description": "Desc",
+      "clues": [
+        "Incice 1"
+      ],
+      "code": [
+        {
+          "language": "html",
+          "example": "ex1",
+          "soluce": "sol11",
+          "tests": [
+            {
+              "pattern": "pat1",
+              "message": "msg"
+            },
+            {
+              "pattern": "pat1",
+              "message": "msg"
+            }
+          ]
+        },
+        {
+          "language": "css",
+          "example": "ex2",
+          "soluce": "voila",
+          "tests": [
+            {
+              "pattern": "pat1",
+              "message": "msg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
