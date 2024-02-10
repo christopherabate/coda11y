@@ -44,7 +44,7 @@ class Sandbox {
           timeoutID = setTimeout(() => {
             this.update()
           }, 400);
-        })
+        });
       });
     }
     

@@ -1,0 +1,19 @@
+.splitviews {
+  display: flex;align-items: stretch;
+}
+
+
+.splitviews > div {
+    flex: 1;
+}
+
+.splitviews .handle {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  padding: 0 .25em;
+  margin: 0 .5em;
+  min-height: 100%;
+  cursor:col-resize;
+}
