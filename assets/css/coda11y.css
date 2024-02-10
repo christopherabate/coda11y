@@ -1,48 +1,16 @@
-.coda11y {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
-	gap: 0;
+.split {
+    display: flex;
+    flex-direction: row;
 }
 
-.coda11y pre,
-.coda11y textarea {
-	grid-area: 1 / 1 / 2 / 2;
+.gutter {
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin: 0 .5em;
 }
 
-.coda11y pre,
-.coda11y textarea {
-	display: block;
-	line-height: 1.5;
-	margin: 0;
-	overflow: auto;
-	padding: 1em;
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.coda11y code {
-	word-wrap: break-word;
-}
-
-.coda11y pre,
-.coda11y code,
-.coda11y textarea {
-	font-family: Menlo, Monaco, "Courier New", monospace;
-	font-size: 1em;
-}
-
-.coda11y pre code {
-	color: inherit;
-	font-size: 1em;
-}
-
-.coda11y textarea {
-	background-color: transparent;
-	border: none;
-	color: transparent;
-	caret-color: #000;
-	overflow: hidden;
-	resize: none;
-	width: 100%;
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
 }
