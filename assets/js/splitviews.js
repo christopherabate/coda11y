@@ -1,6 +1,6 @@
 'use strict';
 
-const splitviews = (boxes = "") => {
+const splitviews = (boxes = {}) => {
     
   const BOXES = boxes || document.querySelectorAll(".splitviews");
   
