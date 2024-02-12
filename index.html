@@ -19,6 +19,43 @@
       <h2>Exercice 1</h2>
       <p class="mb-3 lead">Enoncé n1</p>
       <form id="Coda11y-1" class="splitviews d-block d-md-flex">
+        <div id="input">
+          <div class="card text-bg-dark mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <p class="fw-bold m-0">HTML</p>
+              <span class="bi bi-filetype-html"></span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="m-0"><code title="HTML" class="language-html">&lt;h1&gt;Hello&lt;/h1&gt;</code></pre>
+            </div>
+          </div>
+          <div class="card text-bg-dark mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <p class="fw-bold m-0">CSS</p>
+              <span class="bi bi-filetype-css"></span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="m-0"><code title="CSS" class="language-css">h1 {
+  color: red;
+}</code></pre>
+            </div>
+          </div>
+          <div class="card text-bg-dark mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <p class="fw-bold m-0">Javascript</p>
+              <span class="bi bi-filetype-js"></span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="m-0"><code title="Javascript" class="language-js">// Alert
+document.querySelectorAll('h1').forEach(function (title) {
+  title.addEventListener("click", function (e) {
+    alert(e.target);
+  })
+});</code></pre>
+            </div>
+          </div>
+        </div>
+        <span class="handle d-none d-md-block"></span>
         <div id="console">
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -70,43 +107,6 @@
           </ul>
         </div>
         <span class="handle d-none d-md-block"></span>
-        <div id="input">
-          <div class="card text-bg-dark mb-3">
-            <div class="card-header d-flex justify-content-between align-items-center">
-              <p class="fw-bold m-0">HTML</p>
-              <span class="bi bi-filetype-html"></span>
-            </div>
-            <div class="card-body p-0">
-              <pre class="m-0"><code title="HTML" class="language-html">&lt;h1&gt;Hello&lt;/h1&gt;</code></pre>
-            </div>
-          </div>
-          <div class="card text-bg-dark mb-3">
-            <div class="card-header d-flex justify-content-between align-items-center">
-              <p class="fw-bold m-0">CSS</p>
-              <span class="bi bi-filetype-css"></span>
-            </div>
-            <div class="card-body p-0">
-              <pre class="m-0"><code title="CSS" class="language-css">h1 {
-  color: red;
-}</code></pre>
-            </div>
-          </div>
-          <div class="card text-bg-dark">
-            <div class="card-header d-flex justify-content-between align-items-center">
-              <p class="fw-bold m-0">Javascript</p>
-              <span class="bi bi-filetype-js"></span>
-            </div>
-            <div class="card-body p-0">
-              <pre class="m-0"><code title="Javascript" class="language-js">// Alert
-document.querySelectorAll('h1').forEach(function (title) {
-  title.addEventListener("click", function (e) {
-    alert(e.target);
-  })
-});</code></pre>
-            </div>
-          </div>
-        </div>
-        <span class="handle d-none d-md-block"></span>
         <div id="output">
           <div class="card h-100">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -138,7 +138,6 @@ document.querySelectorAll('h1').forEach(function (title) {
       </form>
     </main>
     <footer>
-      <p>Christopher ABATE // 2024</p>
     </footer>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

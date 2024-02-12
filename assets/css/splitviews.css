@@ -1,5 +1,5 @@
 .splitviews {
-  display: flex;align-items: stretch;
+  display: flex;
 }
 
 
@@ -11,9 +11,9 @@
   background-color: #eee;
   background-repeat: no-repeat;
   background-position: 50%;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
-  padding: 0 .25em;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI0NDQ0NDQyIgY2xhc3M9ImJpIGJpLXRocmVlLWRvdHMtdmVydGljYWwiIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgPHBhdGggZD0iTTkuNSAxM2ExLjUgMS41IDAgMSAxLTMgMCAxLjUgMS41IDAgMCAxIDMgMG0wLTVhMS41IDEuNSAwIDEgMS0zIDAgMS41IDEuNSAwIDAgMSAzIDBtMC01YTEuNSAxLjUgMCAxIDEtMyAwIDEuNSAxLjUgMCAwIDEgMyAwIi8+Cjwvc3ZnPg==");
+  width: 8px;
   margin: 0 .5em;
   min-height: 100%;
-  cursor:col-resize;
+  cursor: col-resize;
 }
