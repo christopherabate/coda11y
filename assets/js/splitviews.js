@@ -1,56 +1,57 @@
-class Splitviews {
+'use strict';
+
+const splitviews = (boxes = "") => {
+    
+  const BOXES = boxes || document.querySelectorAll(".splitviews");
   
-  constructor(boxes = "") {
+  BOXES.forEach((box) => {
     
-    const BOXES = boxes || document.querySelectorAll(".splitviews");
-    
-    BOXES.forEach((box) => {
+    box.querySelectorAll(".handle").forEach((handle) => {
       
-      box.querySelectorAll(".handle").forEach((handle) => {
+        let left = handle.previousElementSibling;
+        let right = handle.nextElementSibling;
+        let x = 0;
+        let leftOrigin = 0;
+        let rightOrigin = 0;
+  
+        let mousedown = function(e) {
+          x = e.clientX;
+          
+          leftOrigin = left.getBoundingClientRect().width;
+          rightOrigin = right.getBoundingClientRect().width;
         
-          let left = handle.previousElementSibling;
-          let right = handle.nextElementSibling;
-          let x = 0;
-          let leftOrigin = 0;
-          let rightOrigin = 0;
-    
-          let mousedown = function(e) {
-            x = e.clientX;
-            
-            leftOrigin = left.getBoundingClientRect().width;
-            rightOrigin = right.getBoundingClientRect().width;
+          document.addEventListener('mousemove', mousemove);
+          document.addEventListener('mouseup', mouseup);
+        };
+        
+        let mousemove = function(e) {
+          const dx = e.clientX - x;
           
-            document.addEventListener('mousemove', mousemove);
-            document.addEventListener('mouseup', mouseup);
-          };
+          left.style.userSelect = "none";
+          left.style.pointerEvents = "none";
+          left.style.flexGrow = 0;
+          left.style.flexBasis = `${leftOrigin + dx}px`;
+          right.style.userSelect = "none";
+          right.style.pointerEvents = "none";
+          right.style.flexGrow = 0;
+          right.style.flexBasis = `${rightOrigin - dx}px`;
+        };
+        
+        let mouseup = function(e) {
+          left.style.removeProperty("user-select");
+          left.style.removeProperty("pointer-events");
+          right.style.removeProperty("user-select");
+          right.style.removeProperty("pointer-events");
           
-          let mousemove = function(e) {
-            const dx = e.clientX - x;
-            
-            left.style.userSelect = "none";
-            left.style.pointerEvents = "none";
-            left.style.flexGrow = 0;
-            left.style.flexBasis = `${leftOrigin + dx}px`;
-            right.style.userSelect = "none";
-            right.style.pointerEvents = "none";
-            right.style.flexGrow = 0;
-            right.style.flexBasis = `${rightOrigin - dx}px`;
-          };
-          
-          let mouseup = function(e) {
-            left.style.removeProperty("user-select");
-            left.style.removeProperty("pointer-events");
-            right.style.removeProperty("user-select");
-            right.style.removeProperty("pointer-events");
-            
-            document.removeEventListener('mousemove', mousemove);
-            document.removeEventListener('mouseup', mouseup)
-          };
-          
-          handle.addEventListener('mousedown', mousedown);
-        });
+          document.removeEventListener('mousemove', mousemove);
+          document.removeEventListener('mouseup', mouseup)
+        };
+        
+        handle.addEventListener('mousedown', mousedown);
       });
-    
-    return BOXES;
-  }
+    });
+  
+  return BOXES;
 }
+
+export default splitviews
