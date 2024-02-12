@@ -1,12 +1,13 @@
 'use strict';
 
-const splitviews = (boxes = {}) => {
+const splitviews = (options = {}) => {
     
-  const BOXES = boxes || document.querySelectorAll(".splitviews");
+  const BOXES = options.boxes || document.querySelectorAll(".splitviews");
+  const HANDLECLASS = options.handleClass || "handle";
   
-  document.querySelectorAll(".splitviews").forEach((box) => {
+  BOXES.forEach((box) => {
     
-    box.querySelectorAll(".handle").forEach((handle) => {
+    box.querySelectorAll(`.${HANDLECLASS}`).forEach((handle) => {
       
       let left = handle.previousElementSibling;
       let right = handle.nextElementSibling;
