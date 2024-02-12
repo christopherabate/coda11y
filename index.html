@@ -248,9 +248,9 @@ document.querySelectorAll('h1').forEach(function (title) {
   <script src="assets/js/sandbox.js"></script>
   <script src="assets/js/splitviews.js"></script>
   <script type="module">
-    let splitviews = new Splitviews();
-    
     document.querySelectorAll("form").forEach((box) => {
+      new Splitviews();
+      
       new Sandbox({ box: box, editable: true });
     
       box.addEventListener("input", (event) => {
