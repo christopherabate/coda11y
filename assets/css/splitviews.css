@@ -2,12 +2,11 @@
   display: flex;
 }
 
-
 .splitviews > div {
     flex: 1;
 }
 
-.splitviews .handle {
+.splitviews > span {
   background-color: #eee;
   background-repeat: no-repeat;
   background-position: 50%;
