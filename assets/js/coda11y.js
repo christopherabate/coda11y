@@ -1,5 +1,5 @@
-import sandbox from "../modules/sandbox.js";
-import splitviews from "../modules/splitviews.js";
+import sandbox from "./modules/sandbox.js";
+import splitviews from "./modules/splitviews.js";
 
 splitviews();
 
