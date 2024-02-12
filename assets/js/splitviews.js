@@ -4,9 +4,7 @@ class Splitviews {
     
     this.box = box || document.querySelector(".splitviews");
     
-    let handles = this.box.querySelectorAll(".handle");
-    
-      handles.forEach((handle) => {
+    this.box.querySelectorAll(".handle").forEach((handle) => {
         
         let left = handle.previousElementSibling;
         let right = handle.nextElementSibling;
@@ -48,7 +46,7 @@ class Splitviews {
         };
         
         handle.addEventListener('mousedown', mousedown);
-      });
+    });
     
     return this.box;
   }
