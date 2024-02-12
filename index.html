@@ -271,7 +271,7 @@
   <script type="module">
     import splitviews from "./assets/js/splitviews.js"
     
-    splitviews;
+    splitviews(document.querySelectorAll(".splitviews"));
     
     document.querySelectorAll("form").forEach((box) => {
       new Sandbox({ box: box, editable: true });
