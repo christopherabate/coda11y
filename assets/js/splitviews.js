@@ -4,7 +4,7 @@ const splitviews = (boxes = {}) => {
     
   const BOXES = boxes || document.querySelectorAll(".splitviews");
   
-  BOXES.forEach((box) => {
+  document.querySelectorAll(".splitviews").forEach((box) => {
     
     box.querySelectorAll(".handle").forEach((handle) => {
       
