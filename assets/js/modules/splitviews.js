@@ -1,10 +1,8 @@
 'use strict';
 
-const splitviews = (options = {}) => {
+const splitviews = () => {
     
-  const BOXES = options.boxes || document.querySelectorAll(".splitviews");
-  
-  BOXES.forEach((box) => {
+  document.querySelectorAll(".splitviews").forEach((box) => {
     
     [...box.children].slice(0, -1).forEach((view) => {
       
@@ -58,8 +56,6 @@ const splitviews = (options = {}) => {
       }
     });
   });
-  
-  return BOXES;
 }
 
 export default splitviews
