@@ -12,7 +12,7 @@ const alert = (parent, title, message, type) => {
     <\/p>`
     ];
 
-  parent.appendChild(wrapper)
+  parent.appendChild(wrapper);
 }
 
 document.querySelectorAll("form").forEach((box) => {
@@ -25,20 +25,24 @@ document.querySelectorAll("form").forEach((box) => {
   box.addEventListener("submit", (event) => {
     console.log(event.submitter);
     
+    [...box.querySelectorAll('.card-body .alert-dismissible')].map(element => new bootstrap.Alert(element)).forEach((alert) => {
+      alert.close()
+    });
+
     switch (event.submitter.name) {
-      case "clue1":
-      case "clue2":
-      case "clue3":
-        console.log("clue");
-        alert(box.querySelector("#console .card-body"), '<span class="bi bi-info-circle-fill"></span> Indice', "Nice, you triggered this alert message!", "info")
+      case "hint_1":
+      case "hint_2":
+      case "hint_3":
+        console.log("hints");
+        alert(box.querySelector(".card-body"), `<span class="bi bi-info-circle-fill"></span> ${event.submitter.name}`, "Nice, you triggered this alert message!", "info")
         break;
-      case "solution":
-        console.log("solution");
-        alert(box.querySelector("#console .card-body"), '<span class="bi bi-lightbulb-fill"></span> Solution', "Nice, you triggered this alert message!", "warning")
+      case "answer":
+        console.log("answer");
+        alert(box.querySelector(".card-body"), `<span class="bi bi-lightbulb-fill"></span> ${event.submitter.name}`, "Nice, you triggered this alert message!", "warning")
         break;
-      case "validate":
-        console.log("validate");
-        alert(box.querySelector("#console .card-body"), '<span class="bi bi-universal-access-circle"></span> Success', "Nice, you triggered this alert message!", "success")
+      case "test":
+        console.log("test");
+        alert(box.querySelector(".card-body"), `<span class="bi bi-universal-access-circle"></span> ${event.submitter.name}`, "Nice, you triggered this alert message!", "success")
         break;
     }
     
