@@ -9,7 +9,7 @@
 
 .splitviews > span {
   display: flex;
-  flex-basis: 8px;
+  flex-basis: 6px;
   background-color: #084E04;
   background-repeat: no-repeat;
   background-position: 50%;
