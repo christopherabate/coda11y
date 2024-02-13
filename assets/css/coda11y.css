@@ -16,9 +16,9 @@ body {
 body:after {
   content: '';
   pointer-events: none;
-  width: 100%;
-  height: 100%;
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   top: 0px;
   left: 0px;
   background: linear-gradient(#14D20A 50%, #000 50%);
@@ -26,5 +26,5 @@ body:after {
   background-repeat: repeat-y;
   opacity: .2;
   box-shadow: inset 0  0 100em 3em #000;
-  z-index: 999;
+  z-index: 1100;
 }
