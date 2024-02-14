@@ -17,8 +17,8 @@ body {
 #scanlines {
   pointer-events: none;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0px;
   left: 0px;
   background: linear-gradient(#14D20A 50%, #021301 50%);
