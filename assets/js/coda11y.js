@@ -1,7 +1,4 @@
 import sandbox from "./modules/sandbox.js";
-import splitviews from "./modules/splitviews.js";
-
-splitviews();
 
 const alert = (parent, title, message, type) => {
   const wrapper = document.createElement("div")
