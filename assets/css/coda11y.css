@@ -30,5 +30,7 @@ body {
 }
 
 .card {
+  color: #14D20A;
   background-color: transparent;
+  border-color: #084E04;
 }
