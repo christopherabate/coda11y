@@ -2,7 +2,6 @@
   display: flex;
 }
 
-
 .splitviews > div {
     flex: 1;
 }
@@ -14,7 +13,7 @@
   background-repeat: no-repeat;
   background-position: 50%;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI0NDQ0NDQyIgY2xhc3M9ImJpIGJpLXRocmVlLWRvdHMtdmVydGljYWwiIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgPHBhdGggZD0iTTkuNSAxM2ExLjUgMS41IDAgMSAxLTMgMCAxLjUgMS41IDAgMCAxIDMgMG0wLTVhMS41IDEuNSAwIDEgMS0zIDAgMS41IDEuNSAwIDAgMSAzIDBtMC01YTEuNSAxLjUgMCAxIDEtMyAwIDEuNSAxLjUgMCAwIDEgMyAwIi8+Cjwvc3ZnPg==");
-  margin: 0 .5em;
+  margin: 0 1em;
   min-height: 100%;
   cursor: col-resize;
 }
