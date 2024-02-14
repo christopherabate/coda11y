@@ -1,14 +1,7 @@
-.splitviews {
-  display: flex;
-}
-
-.splitviews > div {
-    flex: 1;
-}
 
 .splitviews > span {
   display: flex;
-  flex-basis: 6px;
+  width: 6px;
   background-color: #084E04;
   background-repeat: no-repeat;
   background-position: 50%;
