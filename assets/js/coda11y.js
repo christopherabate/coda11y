@@ -47,7 +47,7 @@ document.querySelectorAll("form").forEach((box) => {
   });
 });
 
-fetch('./exercises.json')
+fetch('./coda11y.json')
 .then(response => response.json())
 .then(data => {
   console.log(data);
