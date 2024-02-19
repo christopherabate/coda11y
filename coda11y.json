@@ -1,0 +1,65 @@
+{
+    "questions": [
+        {
+            "title": "Images",
+            "description": "Les images doivent avoir une alternative textuelle pertinente",
+            "hints": [
+                "Les balises <code>&lt;img&gt;</code> possèdent-elles un attribut <code>alt</code> ?",
+                "Toutes les images contiennent du texte ou sont porteuses d'information ?",
+                "Pour une balise <code>&lt;svg&gt;<code>, les attributs ARIA <code>aria-hidden</code>, <code>aria-label</code> ou <code>aria-labelledby</code> peuvent s'avérer utiles&hellip;"
+            ],
+            "code": [
+                {
+                    "language": "html",
+                    "placeholder": "&lt;svg role=&quot;img&quot;&gt; [...] &lt;/svg&gt;",
+                    "answer": "&lt;svg role=&quot;img&quot; aria-label=&quot;alternative textuelle&quot;&gt; [...] &lt;/svg&gt;",
+                    "tests": [
+                        {
+                            "pattern": "alt",
+                            "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image."
+                        },
+                        {
+                            "pattern": "aria-",
+                            "error": "Les balises <code>&lt;svg&gt;<code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Exo 2",
+            "description": "Desc",
+            "hints": [
+                "Incice 1"
+            ],
+            "code": [
+                {
+                    "language": "html",
+                    "placeholder": "ex1",
+                    "answer": "sol11",
+                    "tests": [
+                        {
+                            "pattern": "pat1",
+                            "error": "msg"
+                        },
+                        {
+                            "pattern": "pat1",
+                            "error": "msg"
+                        }
+                    ]
+                },
+                {
+                    "language": "css",
+                    "placeholder": "ex2",
+                    "answer": "voila",
+                    "tests": [
+                        {
+                            "pattern": "pat1",
+                            "error": "msg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
