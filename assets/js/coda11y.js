@@ -13,14 +13,13 @@ document.querySelector("header .offcanvas-body").appendChild(Object.assign(docum
 Object.values(coda11y).forEach((question, index) => {
   document.querySelector("main").appendChild(Object.assign(document.createElement("div"),{
     innerHTML: [`
-    <h2>${question.title}</h2>
       <form>
         <div class="row">
           <div class="col-md-4 mb-3">
             <div class="card h-100">
               <div class="card-header d-flex justify-content-between align-items-center">
                 <span class="bi bi-chevron-right"></span>
-                <p class="fw-bold m-0">Console</p>
+                <h2 class="h6 fw-bold m-0">${question.title}</h2>
                 <span class="bi bi-window-sidebar"></span>
               </div>
               <div class="card-body">
@@ -51,7 +50,7 @@ Object.values(coda11y).forEach((question, index) => {
                 <div class="col-md mb-3">
                   <div class="card h-100">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                      <p class="fw-bold m-0">${code.language}</p>
+                      <h3 class="h6 text-uppercase fw-bold m-0">${code.language}</h3>
                       <span class="bi bi-filetype-${code.language}"></span>
                     </div>
                     <div class="card-body p-0">
@@ -70,7 +69,7 @@ Object.values(coda11y).forEach((question, index) => {
                       <span class="bi bi-circle-fill text-warning"></span>
                       <span class="bi bi-circle-fill text-success"></span>
                     </div>
-                    <p class="fw-bold m-0">${question.title}</p>
+                    <h3 class="h6 fw-bold m-0">Aperçu</h3>
                     <span class="bi bi-window"></span>
                   </div>
                   <div class="card-body d-flex overflow-hidden p-0" style="resize: vertical;">
