@@ -29,7 +29,6 @@ Object.values(coda11y).forEach((question, index) => {
                   ${question.description}
                 </p>
                 <ul class="list-inline d-flex justify-content-between">
-
                   ${question.hints.map((hint, index) => [`
                     <li class="list-inline-item">
                       <button class="btn btn-info" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
@@ -48,7 +47,6 @@ Object.values(coda11y).forEach((question, index) => {
           </div>
           <div class="col-md mb-3">
             <div class="row">
-
               ${question.codes.map(code => [`
                 <div class="col-md mb-3">
                   <div class="card h-100">
@@ -62,7 +60,6 @@ Object.values(coda11y).forEach((question, index) => {
                   </div>
                 </div>
               `]).join("")}
-
             </div>
             <div class="row">
               <div class="col-md">
@@ -111,7 +108,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "hint_3":
         event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
           innerHTML: [`
-            <strong><span class="bi bi-info-circle-fill"></span>${event.submitter.name} :<\/strong> ${atob(event.submitter.dataset.hint)}
+            <strong><span class="bi bi-info-circle-fill"></span> ${event.submitter.textContent} :<\/strong> ${atob(event.submitter.dataset.hint)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-info alert-dismissible fade show",
@@ -121,7 +118,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "answer":
         event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
           innerHTML: [`
-            <strong><span class="bi bi-lightbulb-fill"></span>${event.submitter.name} :<\/strong> ${atob(event.submitter.dataset.answer)}
+            <strong><span class="bi bi-lightbulb-fill"></span> ${event.submitter.textContent} :<\/strong> ${atob(event.submitter.dataset.answer)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-warning alert-dismissible fade show",
@@ -131,7 +128,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "test":
         event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
           innerHTML: [`
-            <strong><span class="bi bi-universal-access-circle"></span>${event.submitter.name} :<\/strong> ${atob(event.submitter.dataset.errors)}
+            <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong> ${atob(event.submitter.dataset.errors)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-success alert-dismissible fade show",
