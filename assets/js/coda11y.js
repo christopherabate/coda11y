@@ -97,7 +97,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "hint_3":
         event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
           innerHTML: [`
-            <strong><span class="bi bi-info-circle-fill"></span> ${event.submitter.name} :<\/strong> ${atob(event.submitter.dataset.hint)}
+            <strong><span class="bi bi-info-circle-fill"></span> ${event.submitter.value} :<\/strong> ${atob(event.submitter.dataset.hint)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-info alert-dismissible fade show",
@@ -107,7 +107,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "answer":
         event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
           innerHTML: [`
-            <strong><span class="bi bi-lightbulb-fill"></span> ${event.submitter.name} :<\/strong> ${atob(event.submitter.dataset.answer)}
+            <strong><span class="bi bi-lightbulb-fill"></span> Solution :<\/strong> ${atob(event.submitter.dataset.answer)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-warning alert-dismissible fade show",
@@ -117,7 +117,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "test":
         event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
           innerHTML: [`
-            <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.name} :<\/strong> ${atob(event.submitter.dataset.errors)}
+            <strong><span class="bi bi-universal-access-circle"></span> Tester :<\/strong> ${atob(event.submitter.dataset.errors)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-success alert-dismissible fade show",
