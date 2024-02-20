@@ -1,0 +1,27 @@
+:root {
+    --slide: 0;
+}
+
+body {
+    overflow: hidden;
+    scroll-padding-top: 0;
+    counter-reset: slide;
+}
+
+.slide {
+    counter-increment: slide;
+    height: 100%;
+    position: absolute;
+    top: calc(100% * var(--slide));
+    right: 0;
+    left: 0;
+    overflow: auto;
+}
+
+header,
+footer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
