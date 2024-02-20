@@ -6,7 +6,7 @@ Object.values(coda11y).forEach((question, index) => {
     <h2>${question.title}</h2>
     <form>
       <div class="row">
-        <div class="col-md-auto mb-3">
+        <div class="col-md-4 mb-3">
           <div class="card h-100">
             <div class="card-header d-flex justify-content-between align-items-center">
               <span class="bi bi-chevron-right"></span>
