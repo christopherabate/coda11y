@@ -77,7 +77,7 @@ Object.values(coda11y).forEach((question, index) => {
         </div>
       </form>
     `],
-    setAttribute: ["style", "background-color:black"]
+    style: `--slide: ${index};`
   }));
 });
 
