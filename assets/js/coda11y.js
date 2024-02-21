@@ -23,10 +23,7 @@ Object.values(coda11y).forEach((question, index) => {
                 <span class="bi bi-window-sidebar"></span>
               </div>
               <div class="card-body">
-                <div class="alert" role="alert">
-                <strong><span class="bi bi-arrow-down-circle-fill"></span> Challenge :<\/strong>
-                ${question.description}</p>
-                </div>
+                <p>${question.description}</p>
                 <div class="btn-group">
                   ${question.hints.map((hint, index) => [`
                     <button class="btn btn-outline-info mb-3" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
@@ -89,7 +86,9 @@ document.querySelectorAll("form").forEach((box) => {
   });
   
   box.addEventListener("submit", (event) => {
-    
+
+    event.preventDefault();
+
     [...box.querySelectorAll(".card-body .alert-dismissible")].map(element => new bootstrap.Alert(element)).forEach((alert) => {
       alert.close();
     });
@@ -124,6 +123,15 @@ document.querySelectorAll("form").forEach((box) => {
         }));
         break;
       case "test":
+        Object.entries(Object.fromEntries(new FormData(event.target).entries())).forEach(([input, value]) => {
+          console.log(`${input}: ${value}`);
+        });
+
+        [...JSON.parse(atob(event.submitter.dataset.tests))].forEach((code) => {
+          console.log(code.language);
+          console.log(code.tests.map(test => test.pattern));
+        });
+
         event.submitter.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
             <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong>
@@ -147,7 +155,5 @@ document.querySelectorAll("form").forEach((box) => {
         }));
         break;
     }
-    
-    event.preventDefault();
   });
 });

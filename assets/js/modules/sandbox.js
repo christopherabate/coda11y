@@ -26,6 +26,7 @@ const sandbox = (options = {}) => {
       textarea.setAttribute("translate", "no");
       textarea.setAttribute("title", codebox.getAttribute("title"));
       textarea.setAttribute("aria-label", codebox.getAttribute("title"));
+      textarea.setAttribute("name", codebox.getAttribute("title"));
       textarea.innerHTML = codebox.textContent;
       
       codebox.parentElement.insertAdjacentElement("beforebegin", editor);
