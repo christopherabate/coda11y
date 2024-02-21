@@ -8,15 +8,17 @@ export default
             {
                 "language": "html",
                 "placeholder": "&lt;svg role=&quot;img&quot;&gt; [...] &lt;/svg&gt;",
-                "answer": "Pour les images <code>&lt;svg&gt;</code> : <code>&lt;svg role=&quot;img&quot; aria-label=&quot;alternative textuelle&quot;&gt; [...] &lt;/svg&gt;</code>",
+                "answer": "&lt;svg role=&quot;img&quot; aria-label=&quot;alternative textuelle&quot;&gt; [...] &lt;/svg&gt;",
                 "tests": [
                     {
                         "pattern": "alt",
-                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image."
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
                     }
                 ]
             }
@@ -39,11 +41,13 @@ export default
                 "tests": [
                     {
                         "pattern": "alt",
-                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image."
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
                     }
                 ]
             },
@@ -54,11 +58,13 @@ export default
                 "tests": [
                     {
                         "pattern": "alt",
-                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image."
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
                     }
                 ]
             },
@@ -69,11 +75,13 @@ export default
                 "tests": [
                     {
                         "pattern": "alt",
-                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image."
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
                     }
                 ]
             }

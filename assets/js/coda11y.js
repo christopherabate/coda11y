@@ -130,7 +130,12 @@ document.querySelectorAll("form").forEach((box) => {
             <ol>
               ${JSON.parse(atob(event.submitter.dataset.tests)).map(code => [`
                 ${code.map(test => [`
-                  <li>${test.pattern} : ${test.error}</li>
+                  <li>
+                    <dl>
+                      <dt>${test.pattern}</dt><dd>${test.error}</dd>
+                    </dl>
+                    ${test.succes}
+                  </li>
                 `]).join("")}
               `]).join("")}
             </ol>
