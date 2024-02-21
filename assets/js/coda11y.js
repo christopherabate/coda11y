@@ -127,18 +127,15 @@ document.querySelectorAll("form").forEach((box) => {
         event.submitter.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
             <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong>
-            <ol>
+            <dl>
               ${JSON.parse(atob(event.submitter.dataset.tests)).map(code => [`
                 ${code.map(test => [`
-                  <li>
-                    <dl>
-                      <dt>${test.pattern}</dt><dd>${test.error}</dd>
-                    </dl>
-                    ${test.success}
-                  </li>
+                  <dt>${test.pattern}</dt>
+                  <dd>Erreur : ${test.error}</dd>
+                  <dd>Succès : ${test.success}</dd>
                 `]).join("")}
               `]).join("")}
-            </ol>
+            </dl>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-success alert-dismissible show",
