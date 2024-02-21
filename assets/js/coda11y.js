@@ -27,7 +27,7 @@ Object.values(coda11y).forEach((question, index) => {
                 <strong><span class="bi bi-arrow-down-circle-fill"></span> Challenge :<\/strong>
                 ${question.description}</p>
                 </div>
-                <div class="mb-1">
+                <div class="mb-3">
                   <div class="btn-group">
                     ${question.hints.map((hint, index) => [`
                       <button class="btn btn-outline-info" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
