@@ -93,7 +93,7 @@ document.querySelectorAll("form").forEach((box) => {
   box.addEventListener("submit", (event) => {
     
     [...box.querySelectorAll(".card-body .alert-dismissible")].map(element => new bootstrap.Alert(element)).forEach((alert) => {
-      alert.dispose();
+      alert.close();
     });
 
     switch (event.submitter.name) {
@@ -106,7 +106,7 @@ document.querySelectorAll("form").forEach((box) => {
             ${atob(event.submitter.dataset.hint)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
-          className: "alert alert-info alert-dismissible fade show",
+          className: "alert alert-info alert-dismissible show",
           role: "alert"
         }));
         break;
@@ -121,7 +121,7 @@ document.querySelectorAll("form").forEach((box) => {
             </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
-          className: "alert alert-warning alert-dismissible fade show",
+          className: "alert alert-warning alert-dismissible show",
           role: "alert"
         }));
         break;
@@ -138,7 +138,7 @@ document.querySelectorAll("form").forEach((box) => {
             </ol>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
-          className: "alert alert-success alert-dismissible fade show",
+          className: "alert alert-success alert-dismissible show",
           role: "alert"
         }));
         break;
