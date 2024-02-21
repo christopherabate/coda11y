@@ -93,7 +93,7 @@ document.querySelectorAll("form").forEach((box) => {
   box.addEventListener("submit", (event) => {
     
     [...box.querySelectorAll(".card-body .alert-dismissible")].map(element => new bootstrap.Alert(element)).forEach((alert) => {
-      alert.close()
+      alert.dispose();
     });
 
     switch (event.submitter.name) {
