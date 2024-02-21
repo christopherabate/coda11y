@@ -134,7 +134,7 @@ document.querySelectorAll("form").forEach((box) => {
                     <dl>
                       <dt>${test.pattern}</dt><dd>${test.error}</dd>
                     </dl>
-                    ${test.succes}
+                    ${test.success}
                   </li>
                 `]).join("")}
               `]).join("")}
