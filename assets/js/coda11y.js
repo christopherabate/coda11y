@@ -32,8 +32,8 @@ Object.values(coda11y).forEach((question, index) => {
                     <button class="btn btn-outline-info mb-3" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
                   `]).join("")}
                 </div>
-                <button class="btn btn-outline-warning mb-3" type="submit" name="answer" data-answers="${btoa(JSON.stringify(question.codes.map(code => code.answer)))}">Solution</button>
-                <button class="btn btn-outline-success mb-3" type="submit" name="test" data-tests="${btoa(JSON.stringify(question.codes.map(code => code.tests)))}">Test</button>
+                <button class="btn btn-outline-warning mb-3" type="submit" name="answer" data-answers="${btoa(JSON.stringify(question.codes.map(code => Object.assign({}, {['language']: code.language, ['answer']: code.answer} ))))}">Solution</button>
+                <button class="btn btn-outline-success mb-3" type="submit" name="test" data-tests="${btoa(JSON.stringify(question.codes.map(code => Object.assign({}, {['language']: code.language, ['tests']: code.tests} ))))}">Test</button>
               </div>
             </div>
           </div>
@@ -113,8 +113,8 @@ document.querySelectorAll("form").forEach((box) => {
           innerHTML: [`
             <strong><span class="bi bi-lightbulb-fill"></span> ${event.submitter.textContent} :<\/strong>
             <ul>
-              ${JSON.parse(atob(event.submitter.dataset.answers)).map(answer => [`
-                <li>${answer}</li>
+              ${JSON.parse(atob(event.submitter.dataset.answers)).map(code => [`
+                <li>${code.language} : ${code.answer}</li>
               `]).join("")}
             </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
@@ -127,15 +127,19 @@ document.querySelectorAll("form").forEach((box) => {
         event.submitter.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
             <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong>
-            <dl>
+            <ul>
               ${JSON.parse(atob(event.submitter.dataset.tests)).map(code => [`
-                ${code.map(test => [`
-                  <dt>${test.pattern}</dt>
-                  <dd>Erreur : ${test.error}</dd>
-                  <dd>Succès : ${test.success}</dd>
-                `]).join("")}
+              <li>${code.language}
+                  <dl>
+                    ${code.tests.map(test => [`
+                      <dt>${test.pattern}</dt>
+                      <dd>Erreur : ${test.error}</dd>
+                      <dd>Succès : ${test.success}</dd>
+                    `]).join("")}
+                  </dl>
+                </li>
               `]).join("")}
-            </dl>
+            </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-success alert-dismissible show",
