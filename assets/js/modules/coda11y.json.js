@@ -8,7 +8,7 @@ export default
             {
                 "language": "html",
                 "placeholder": "&lt;svg role=&quot;img&quot;&gt; [...] &lt;/svg&gt;",
-                "answer": "&lt;svg role=&quot;img&quot; aria-label=&quot;alternative textuelle&quot;&gt; [...] &lt;/svg&gt;",
+                "answer": "Pour les images <code>&lt;svg&gt;</code> : <code>&lt;svg role=&quot;img&quot; aria-label=&quot;alternative textuelle&quot;&gt; [...] &lt;/svg&gt;</code>",
                 "tests": [
                     {
                         "pattern": "alt",
