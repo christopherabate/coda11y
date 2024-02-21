@@ -27,13 +27,15 @@ Object.values(coda11y).forEach((question, index) => {
                 <strong><span class="bi bi-arrow-down-circle-fill"></span> Challenge :<\/strong>
                 ${question.description}</p>
                 </div>
-                <div class="btn-group">
-                  ${question.hints.map((hint, index) => [`
-                    <button class="btn btn-info" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
-                  `]).join("")}
+                <div class="mb-1">
+                  <div class="btn-group">
+                    ${question.hints.map((hint, index) => [`
+                      <button class="btn btn-outline-info" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
+                    `]).join("")}
+                  </div>
+                  <button class="btn btn-outline-warning" type="submit" name="answer" data-answers="${btoa(JSON.stringify(question.codes.map(code => code.answer)))}">Solution</button>
+                  <button class="btn btn-outline-success" type="submit" name="test" data-tests="${btoa(JSON.stringify(question.codes.map(code => code.tests)))}">Test</button>
                 </div>
-                <button class="btn btn-warning" type="submit" name="answer" data-answers="${btoa(JSON.stringify(question.codes.map(code => code.answer)))}">Solution</button>
-                <button class="btn btn-success" type="submit" name="test" data-tests="${btoa(JSON.stringify(question.codes.map(code => code.tests)))}">Test</button>
               </div>
             </div>
           </div>
@@ -98,7 +100,7 @@ document.querySelectorAll("form").forEach((box) => {
       case "hint_1":
       case "hint_2":
       case "hint_3":
-        event.submitter.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
+        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
             <strong><span class="bi bi-info-circle-fill"></span> ${event.submitter.textContent} :<\/strong>
             ${atob(event.submitter.dataset.hint)}
@@ -109,7 +111,7 @@ document.querySelectorAll("form").forEach((box) => {
         }));
         break;
       case "answer":
-        event.submitter.parentElement.appendChild(Object.assign(document.createElement("div"),{
+        event.submitter.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
             <strong><span class="bi bi-lightbulb-fill"></span> ${event.submitter.textContent} :<\/strong>
             <ul>
@@ -124,7 +126,7 @@ document.querySelectorAll("form").forEach((box) => {
         }));
         break;
       case "test":
-        event.submitter.parentElement.appendChild(Object.assign(document.createElement("div"),{
+        event.submitter.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
             <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong>
             <ol>
