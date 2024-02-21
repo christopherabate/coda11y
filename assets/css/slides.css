@@ -4,11 +4,11 @@
 
 body {
     overflow: hidden;
-    scroll-padding-top: 0;
     counter-reset: slide;
 }
 
 .slide {
+    scroll-padding-top: 0;
     counter-increment: slide;
     height: 100%;
     position: absolute;

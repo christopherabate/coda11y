@@ -23,22 +23,21 @@ Object.values(coda11y).forEach((question, index) => {
                 <span class="bi bi-window-sidebar"></span>
               </div>
               <div class="card-body">
-                <p class="alert" role="alert">
-                  <span class="bi bi-arrow-down-circle-fill"></span>
-                  ${question.description}
-                </p>
+                <div class="alert" role="alert">
+                  <strong><span class="bi bi-arrow-down-circle-fill"></span> Challenge :<\/strong>
+                  ${question.description}</p>
+                </div>
                 <ul class="list-inline d-flex justify-content-between">
                   ${question.hints.map((hint, index) => [`
                     <li class="list-inline-item">
                       <button class="btn btn-info" type="submit" name="hint_${index + 1}" data-hint="${btoa(hint)}">Indice #${index + 1}</button>
                     </li>
                   `]).join("")}
-                  
                   <li class="list-inline-item">
-                    <button class="btn btn-warning" type="submit" name="answer" data-answer="${btoa(question.codes.map(code => code.answer).join(""))}">Solution</button>
+                    <button class="btn btn-warning" type="submit" name="answer" data-answers="${btoa(JSON.stringify(question.codes.map(code => code.answer)))}">Solution</button>
                   </li>
                   <li class="list-inline-item">
-                    <button class="btn btn-success" type="submit" name="test" data-errors="">Tester</button>
+                    <button class="btn btn-success" type="submit" name="test" data-tests="${btoa(JSON.stringify(question.codes.map(code => code.tests)))}">Test</button>
                   </li>
                 </ul>
               </div>
@@ -105,9 +104,10 @@ document.querySelectorAll("form").forEach((box) => {
       case "hint_1":
       case "hint_2":
       case "hint_3":
-        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
+        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
-            <strong><span class="bi bi-info-circle-fill"></span> ${event.submitter.textContent} :<\/strong> ${atob(event.submitter.dataset.hint)}
+            <strong><span class="bi bi-info-circle-fill"></span> ${event.submitter.textContent} :<\/strong>
+            ${atob(event.submitter.dataset.hint)}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-info alert-dismissible fade show",
@@ -115,9 +115,14 @@ document.querySelectorAll("form").forEach((box) => {
         }));
         break;
       case "answer":
-        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
+        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
-            <strong><span class="bi bi-lightbulb-fill"></span> ${event.submitter.textContent} :<\/strong> ${atob(event.submitter.dataset.answer)}
+            <strong><span class="bi bi-lightbulb-fill"></span> ${event.submitter.textContent} :<\/strong>
+            <ul>
+              ${JSON.parse(atob(event.submitter.dataset.answers)).map(answer => [`
+                <li>${answer}</li>
+              `]).join("")}
+            </ul>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-warning alert-dismissible fade show",
@@ -125,9 +130,16 @@ document.querySelectorAll("form").forEach((box) => {
         }));
         break;
       case "test":
-        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("p"),{
+        event.submitter.parentElement.parentElement.parentElement.appendChild(Object.assign(document.createElement("div"),{
           innerHTML: [`
-            <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong> ${atob(event.submitter.dataset.errors)}
+            <strong><span class="bi bi-universal-access-circle"></span> ${event.submitter.textContent} :<\/strong>
+            <ol>
+              ${JSON.parse(atob(event.submitter.dataset.tests)).map(code => [`
+                ${code.map(test => [`
+                  <li>${test.pattern} : ${test.error}</li>
+                `]).join("")}
+              `]).join("")}
+            </ol>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"><\/button>
           `],
           className: "alert alert-success alert-dismissible fade show",

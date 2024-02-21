@@ -16,7 +16,7 @@ export default
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;<code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
                     }
                 ]
             }
@@ -35,7 +35,7 @@ export default
             {
                 "language": "html",
                 "placeholder": "<p>Test CSS</p>",
-                "answer": "ANSWER2",
+                "answer": "ANSWER1",
                 "tests": [
                     {
                         "pattern": "alt",
@@ -43,7 +43,7 @@ export default
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;<code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
                     }
                 ]
             },
@@ -58,14 +58,14 @@ export default
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;<code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
                     }
                 ]
             },
             {
                 "language": "js",
                 "placeholder": "console.log('test');",
-                "answer": "ANSWER2",
+                "answer": "ANSWER3",
                 "tests": [
                     {
                         "pattern": "alt",
@@ -73,7 +73,7 @@ export default
                     },
                     {
                         "pattern": "aria-",
-                        "error": "Les balises <code>&lt;svg&gt;<code> ne peuvent pas posséder un attribut <code>alt</code>."
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>."
                     }
                 ]
             }
