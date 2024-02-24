@@ -1,7 +1,7 @@
 import sandbox from "./modules/sandbox.js";
 import coda11y from "./modules/coda11y.json.js";
 
-document.querySelector("nav").appendChild(Object.assign(document.createElement("ul"), {
+document.querySelector(".dropdown").appendChild(Object.assign(document.createElement("ul"), {
   innerHTML: [`
     ${coda11y.map((question, index) => [`
       <li><a class="dropdown-item" href="#slide_${index}">${index + 1}. ${question.title}</a></li>
@@ -75,6 +75,29 @@ Object.values(coda11y).forEach((question, index, {length}) => {
     id: `slide_${index}`,
     className: "container-fluid slide"
   }));
+});
+
+Object.values(coda11y).forEach((question, index, {length}) => {
+  document.querySelector("footer").appendChild(Object.assign(document.createElement("nav"), {
+    innerHTML: [`
+      ${index == 0
+        ? `<span class="bi bi-chevron-left" aria-hidden="true"></span>`
+        : `<a href="#slide_${index - 1}" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a>`
+      }
+      ${index + 1 == length
+        ? `<span class="bi bi-chevron-right" aria-hidden="true"></span>`
+        : `<a href="#slide_${index + 1}" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a>`
+      }
+    `]
+  }));
+});
+
+document.querySelector("#fullscreen").addEventListener("click", (event) => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    return;
+  }
+  document.body.requestFullscreen();
 });
 
 document.querySelectorAll("form").forEach((box) => {

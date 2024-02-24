@@ -7,7 +7,17 @@ Palette
 #140C01 // brown
 */
 
-/* PREVIOUS */
+/*
+PREVIOUS
 nav li:has(+ li a.active) a {}
-/* NEXT */
+NEXT
 nav li:has(a.active) + li:has(a) a {}
+*/
+
+body:fullscreen .bi-fullscreen {
+    display: none;
+}
+
+body:not(:fullscreen) .bi-fullscreen-exit {
+    display: none;
+}

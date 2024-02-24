@@ -13,18 +13,24 @@
   </head>
   <body>
     <header role="banner">
-      <div class="container-fluid d-flex align-items-center justify-content-between bg-dark">
-        <h1 class="lead m-0"><span class="bi bi-code-slash"></span> Coda11y</h1>
-        <nav class="nav">
-          <button class="btn btn-dark dropdown-toggle m-1" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+      <div class="container-fluid d-flex align-items-center justify-content-between py-1">
+        <h1 class="lead m-0"><a class="text-body text-decoration-none" href="./"><span class="bi bi-code-slash"></span> Coda11y</a></h1>
+        <nav class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" type="button" aria-expanded="false">
             <span class="bi bi-list"></span>
           </button>
         </nav>
       </div>
     </header>
-    <main role="main" data-bs-spy="scroll" data-bs-target="nav"></main>
+    <main role="main" data-bs-spy="scroll" data-bs-target=".dropdown-menu"></main>
     <footer>
-      <p>FOOTER</p>
+      <div class="container-fluid d-flex align-items-center justify-content-between py-1">
+        footer
+        <button id="fullscreen" class="btn btn-dark" type="button">
+          <span class="bi bi-fullscreen"></span>
+          <span class="bi bi-fullscreen-exit"></span>
+        </button>
+      </div>
     </footer>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
