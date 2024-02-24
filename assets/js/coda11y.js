@@ -80,6 +80,7 @@ Object.values(coda11y).forEach((question, index, {length}) => {
 Object.values(coda11y).forEach((question, index, {length}) => {
   document.querySelector("footer").appendChild(Object.assign(document.createElement("nav"), {
     innerHTML: [`
+      <div>
       ${index == 0
         ? `<span class="bi bi-chevron-left" aria-hidden="true"></span>`
         : `<a href="#slide_${index - 1}" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a>`
@@ -88,8 +89,21 @@ Object.values(coda11y).forEach((question, index, {length}) => {
         ? `<span class="bi bi-chevron-right" aria-hidden="true"></span>`
         : `<a href="#slide_${index + 1}" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a>`
       }
+      </div>
     `]
   }));
+});
+
+["hashchange", "load"].forEach((event) => {
+  window.addEventListener(event, () => {
+    document.querySelectorAll("footer nav div").forEach((pagination, index) => {
+      if ((window.location.hash.split("#slide_").pop() == index) || (window.location.hash.split("#slide_").pop() == "" && index == 0)) {
+        pagination.classList.remove("d-none");
+      } else {
+        pagination.classList.add("d-none");
+      }
+    });
+  });
 });
 
 document.querySelector("#fullscreen").addEventListener("click", (event) => {
