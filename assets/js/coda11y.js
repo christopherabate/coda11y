@@ -1,6 +1,7 @@
 import sandbox from "./modules/sandbox.js";
 import coda11y from "./modules/coda11y.json.js";
 
+// Build main navigation
 document.querySelector(".dropdown").appendChild(Object.assign(document.createElement("ul"), {
   innerHTML: [`
     ${coda11y.map((question, index) => [`
@@ -10,6 +11,7 @@ document.querySelector(".dropdown").appendChild(Object.assign(document.createEle
   className: "dropdown-menu"
 }));
 
+// Build slides
 Object.values(coda11y).forEach((question, index, {length}) => {
   document.querySelector("main").appendChild(Object.assign(document.createElement("div"), {
     innerHTML: [`
@@ -73,39 +75,31 @@ Object.values(coda11y).forEach((question, index, {length}) => {
       </form>
     `],
     id: `slide_${index}`,
-    className: "container-fluid slide"
+    className: "container-fluid slide",
+    tabIndex: 0
   }));
 });
 
-Object.values(coda11y).forEach((question, index, {length}) => {
-  document.querySelector("footer").appendChild(Object.assign(document.createElement("nav"), {
-    innerHTML: [`
-      <div>
-      ${index == 0
-        ? `<span class="bi bi-chevron-left" aria-hidden="true"></span>`
-        : `<a href="#slide_${index - 1}" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a>`
-      }
-      ${index + 1 == length
-        ? `<span class="bi bi-chevron-right" aria-hidden="true"></span>`
-        : `<a href="#slide_${index + 1}" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a>`
-      }
-      </div>
-    `]
-  }));
-});
-
-["hashchange", "load"].forEach((event) => {
-  window.addEventListener(event, () => {
-    document.querySelectorAll("footer nav div").forEach((pagination, index) => {
-      if ((window.location.hash.split("#slide_").pop() == index) || (window.location.hash.split("#slide_").pop() == "" && index == 0)) {
-        pagination.classList.remove("d-none");
-      } else {
-        pagination.classList.add("d-none");
+// Build controls
+["load", "hashchange"].forEach((listener) => {
+  window.addEventListener(listener, () => {
+    Object.values(coda11y).forEach(({}, index, {length}) => {
+      if (window.location.hash.split("#slide_").pop() == index) {
+        document.querySelector("footer nav").innerHTML = `
+        ${index == 0 ?
+          `<span class="btn btn-dark disabled bi bi-chevron-left" aria-hidden="true"></span>` :
+          `<a class="btn btn-dark" href="#slide_${index - 1}"><span class="bi bi-chevron-left" aria-hidden="true"></span></a>`
+        } 
+        ${index + 1 == length ?
+          `<span class="btn btn-dark disabled bi bi-chevron-right" aria-hidden="true"></span>` :
+          `<a class="btn btn-dark" href="#slide_${index + 1}"><span class="bi bi-chevron-right" aria-hidden="true"></span></a>`
+        }`
       }
     });
   });
 });
 
+// Handle fullscreen
 document.querySelector("#fullscreen").addEventListener("click", (event) => {
   if (document.fullscreenElement) {
     document.exitFullscreen();
@@ -114,6 +108,7 @@ document.querySelector("#fullscreen").addEventListener("click", (event) => {
   document.body.requestFullscreen();
 });
 
+// Coda11y
 document.querySelectorAll("form").forEach((box) => {
   sandbox({ box: box, editable: true });
 
