@@ -85,15 +85,20 @@ Object.values(coda11y).forEach((question, index, {length}) => {
   window.addEventListener(listener, () => {
     Object.values(coda11y).forEach(({}, index, {length}) => {
       if (window.location.hash.split("#slide_").pop() == index) {
+        document.querySelector("footer p").innerHTML = `${index + 1}/${length}`;
+        
         document.querySelector("footer nav").innerHTML = `
-        ${index == 0 ?
-          `<span class="btn btn-dark disabled bi bi-chevron-left" aria-hidden="true"></span>` :
-          `<a class="btn btn-dark" href="#slide_${index - 1}"><span class="bi bi-chevron-left" aria-hidden="true"></span></a>`
-        } 
-        ${index + 1 == length ?
-          `<span class="btn btn-dark disabled bi bi-chevron-right" aria-hidden="true"></span>` :
-          `<a class="btn btn-dark" href="#slide_${index + 1}"><span class="bi bi-chevron-right" aria-hidden="true"></span></a>`
-        }`
+          <ul class="pagination">
+          ${index == 0 ?
+            `<li class="page-item disabled"><span class="page-link bi bi-chevron-left" aria-hidden="true"></span></li>` :
+            `<li class="page-item"><a class="page-link" href="#slide_${index - 1}"><span class="bi bi-chevron-left" aria-hidden="true"></span></a></li>`
+          } 
+          ${index + 1 == length ?
+            `<li class="page-item disabled"><span class="page-link bi bi-chevron-right" aria-hidden="true"></span></li>` :
+            `<li class="page-item"><a class="page-link" href="#slide_${index + 1}"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></li>`
+          }
+          </ul>
+        `;
       }
     });
   });
