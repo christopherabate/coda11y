@@ -90,5 +90,129 @@ export default
             "Indice 1",
             "Indice 2"
         ]
+    },
+    {
+        "title": "Textes",
+        "description": "Les cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinentLes cadres doivent avoir une alternative textuelle pertinente",
+        "template": "<!doctype html><html><head><meta charset=\"utf-8\"><style>${css}</style></head><body>${html}<script type=\"module\">${js}</script></body></html>",
+        "codes": [
+            {
+                "language": "html",
+                "placeholder": "<p>Test CSS</p>",
+                "answer": "ANSWER1",
+                "tests": [
+                    {
+                        "pattern": "alt",
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
+                    },
+                    {
+                        "pattern": "aria-",
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
+                    }
+                ]
+            },
+            {
+                "language": "css",
+                "placeholder": ".class ",
+                "answer": "ANSWER2",
+                "tests": [
+                    {
+                        "pattern": "alt",
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
+                    },
+                    {
+                        "pattern": "aria-",
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
+                    }
+                ]
+            },
+            {
+                "language": "js",
+                "placeholder": "console.log('test');",
+                "answer": "ANSWER3",
+                "tests": [
+                    {
+                        "pattern": "alt",
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
+                    },
+                    {
+                        "pattern": "aria-",
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
+                    }
+                ]
+            }
+        ],
+        "hints": [
+            "Indice 1",
+            "Indice 2"
+        ]
+    },
+    {
+        "title": "Blabla",
+        "description": "Les cadres doivent avoir une alternative textuelle pertinente",
+        "template": "<!doctype html><html><head><meta charset=\"utf-8\"><style>${css}</style></head><body>${html}<script type=\"module\">${js}</script></body></html>",
+        "codes": [
+            {
+                "language": "html",
+                "placeholder": "<p>Test CSS</p>",
+                "answer": "ANSWER1",
+                "tests": [
+                    {
+                        "pattern": "alt",
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
+                    },
+                    {
+                        "pattern": "aria-",
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
+                    }
+                ]
+            },
+            {
+                "language": "css",
+                "placeholder": ".class ",
+                "answer": "ANSWER2",
+                "tests": [
+                    {
+                        "pattern": "alt",
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
+                    },
+                    {
+                        "pattern": "aria-",
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
+                    }
+                ]
+            },
+            {
+                "language": "js",
+                "placeholder": "console.log('test');",
+                "answer": "ANSWER3",
+                "tests": [
+                    {
+                        "pattern": "alt",
+                        "error": "L'attribut <code>alt</code> est le meilleur moyen de donner une alternative textuelle à une image.",
+                        "success": "Bravo, ..."
+                    },
+                    {
+                        "pattern": "aria-",
+                        "error": "Les balises <code>&lt;svg&gt;</code> ne peuvent pas posséder un attribut <code>alt</code>.",
+                        "success": "Bravo, ..."
+                    }
+                ]
+            }
+        ],
+        "hints": [
+            "Indice 1",
+            "Indice 2"
+        ]
     }
 ]

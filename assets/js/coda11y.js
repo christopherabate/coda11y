@@ -1,29 +1,18 @@
 import sandbox from "./modules/sandbox.js";
 import coda11y from "./modules/coda11y.json.js";
 
-
-document.querySelector("header .offcanvas-body").appendChild(Object.assign(document.createElement("div"), {
+document.querySelector("nav").appendChild(Object.assign(document.createElement("ul"), {
   innerHTML: [`
     ${coda11y.map((question, index) => [`
-      <a class="list-group-item list-group-item-action" href="#slide_${index}">${index + 1}. ${question.title}</a>
+      <li><a class="dropdown-item" href="#slide_${index}">${index + 1}. ${question.title}</a></li>
     `]).join("")}
   `],
-  className: "list-group"
+  className: "dropdown-menu"
 }));
 
 Object.values(coda11y).forEach((question, index, {length}) => {
   document.querySelector("main").appendChild(Object.assign(document.createElement("div"), {
     innerHTML: [`
-      <nav class="position-absolute top-0 bottom-0 start-0 end-0 d-flex justify-content-between align-items-center">
-        ${index == 0
-          ? `<span class="z-2 py-3 border border-start-0 border-light bg-light rounded-end fs-3 bi bi-chevron-left" aria-hidden="true"></span>`
-          : `<a class="z-2 link-dark" href="#slide_${index - 1}" role="button"><span class="py-3 shadow border border-start-0 border-light bg-light rounded-end fs-3 bi bi-chevron-left" aria-hidden="true"></span></a>`
-        }
-        ${index + 1 == length
-          ? `<span class="z-2 py-3 border border-end-0 border-light bg-light rounded-start fs-3 bi bi-chevron-right" aria-hidden="true"></span>`
-          : `<a class="z-2 link-dark" href="#slide_${index + 1}" role="button"><span class="py-3 shadow border border-end-0 border-light bg-light rounded-start fs-3 bi bi-chevron-right" aria-hidden="true"></span></a>`
-        }
-      </nav>
       <form>
         <div class="row">
           <div class="col-md-4 mb-3">
@@ -83,9 +72,8 @@ Object.values(coda11y).forEach((question, index, {length}) => {
         </div>
       </form>
     `],
-    style: `--slide: ${index}`,
     id: `slide_${index}`,
-    className: "container-fluid slide pt-5"
+    className: "container-fluid slide"
   }));
 });
 

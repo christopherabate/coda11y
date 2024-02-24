@@ -6,3 +6,8 @@ Palette
 #F9AA35 // yellow
 #140C01 // brown
 */
+
+/* PREVIOUS */
+nav li:has(+ li a.active) a {}
+/* NEXT */
+nav li:has(a.active) + li:has(a) a {}

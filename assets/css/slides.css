@@ -1,22 +1,22 @@
-:root {
-  --slide: 0;
-}
-
 * {
   scroll-padding-top: 0 !important;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  overflow: hidden;
-  counter-reset: slide;
+  display: flex;
+flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+overflow: hidden;
 }
 
 .slide {
-  counter-increment: slide;
   height: 100%;
-  position: absolute;
-  top: calc(100% * var(--slide));
-  left: 0;
-  right: 0;
-  overflow: auto;
+  overflow-y: auto;
 }
