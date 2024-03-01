@@ -2,7 +2,7 @@
 appliquez a chaque image une alternative textuelle pertinente 
 img desc
 img text
-font icon  
+font icon
 
 2. Cadres
 nommez le cadre
