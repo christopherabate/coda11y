@@ -91,11 +91,11 @@ Object.values(coda11y).forEach((question, index, {length}) => {
           <ul class="pagination">
           ${index == 0 ?
             `<li class="page-item disabled"><span class="page-link bi bi-chevron-left" aria-hidden="true"></span></li>` :
-            `<li class="page-item"><a class="page-link" href="#slide_${index - 1}"><span class="bi bi-chevron-left" aria-hidden="true"></span></a></li>`
+            `<li class="page-item"><a class="page-link" href="#slide_${index - 1}"><span class="bi bi-chevron-left" aria-label="Exercice précédent"></span></a></li>`
           } 
           ${index + 1 == length ?
             `<li class="page-item disabled"><span class="page-link bi bi-chevron-right" aria-hidden="true"></span></li>` :
-            `<li class="page-item"><a class="page-link" href="#slide_${index + 1}"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></li>`
+            `<li class="page-item"><a class="page-link" href="#slide_${index + 1}"><span class="bi bi-chevron-right" aria-label="Exercice suivant"></span></a></li>`
           }
           </ul>
         `;
